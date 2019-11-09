@@ -64,38 +64,19 @@
         ​
             <h3 class="text-center">Mars Hemispheres</h3>
             <br>
-            <div class="row">
-              <div class="col-xs-6 col-md-6">
-                <img src="{{ mars_dict.mars_hemispheres[3]['img_url'] | default('static/images/error.png')}}" style="width:100%" class="img-responsive"
-                  style="padding-right: 20px; padding-left: 20px;"
-                  alt=" {{mars_dict.mars_hemispheres[3]['title']}} " />
-                <h5>{{mars_dict.mars_hemispheres[3]['title']}}</h5>
-        ​
-              </div>
-              <div class="col-xs-6 col-md-6">
-                <img src="{{ mars_dict.mars_hemispheres[0]['img_url'] | default('static/images/error.png') }}" style="width:100%" class="img-responsive"
-                  style="padding-right: 20px; padding-left: 20px;"
-                  alt=" {{mars_dict.mars_hemispheres[0]['title'] }} " />
-                <h5>{{mars_dict.mars_hemispheres[0]['title']}}</h5>
-              </div>
+            
+        ​{% for hemisphere in mars_dict.hemispheres %}
+        <div class="col-md-6">
+          <div class="thumbnail">
+      
+            <!-- if images is False/None/non-existent, then default to error message -->
+            <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="...">
+            <div class="caption">
+              <h3>{{hemisphere.title}}</h3>
             </div>
-        ​
-            <div class="row">
-              <div class="col-xs-6 col-md-6">
-                <img src="{{ mars_dict.mars_hemispheres[1]['img_url'] | default('static/images/error.png') }}" style="width:100%" class="img-responsive"
-                  style="padding-right: 20px; padding-left: 20px;"
-                  alt=" {{mars_dict.mars_hemispheres[1]['title']}} " />
-                <h5>{{mars_dict.mars_hemispheres[1]['title']}}</h5>
-        ​
-              </div>
-              <div class="col-xs-6 col-md-6">
-                <img src="{{ mars_dict.mars_hemispheres[2]['img_url'] | default('static/images/error.png') }}" style="width:100%" class="img-responsive"
-                  style="padding-right: 20px; padding-left: 20px;"
-                  alt=" {{mars_dict.mars_hemispheres[2]['title']}} " />
-                <h5>{{mars_dict.mars_hemispheres[2]['title']}}</h5>
-              </div>
-            </div>
-        ​
+          </div>
+        </div>
+        {% endfor %}
         ​
         ​
         ​

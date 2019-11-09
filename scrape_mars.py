@@ -95,7 +95,7 @@ def mars_facts(browser):
     url = r"https://space-facts.com/mars/"
     browser.visit(url)
     tables = pd.read_html(url)
-    df = tables[1]
+    df = tables[2]
     df.columns = ['Fact', 'Value']
     df.set_index("Fact", inplace=True)
 
