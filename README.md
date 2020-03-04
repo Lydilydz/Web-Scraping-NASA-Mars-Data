@@ -1,2 +1,4 @@
-# web-scraping-challenge
-HW week 12
+# Web-scraping data from Mars 
+
+web-scraping to retrive data relating to Mars from various websites. 
+
